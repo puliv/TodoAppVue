@@ -20,7 +20,7 @@ const app = new Vue({
     addItem: function () {
       this.items.push({
         id: this.items.length + 1,
-        name: this.newItem,
+        name: this.newItem.charAt(0).toUpperCase() + this.newItem.slice(1),
         completed: false,
       });
       this.newItem = '';
@@ -42,8 +42,12 @@ const app = new Vue({
       this.currentDate = date;
     }
   },
+  computed: {
+    reversedItems: function () {
+      return this.items.slice(0).reverse()
+    }
+  },
   mounted() {
     this.getDate();
   }
-
 });

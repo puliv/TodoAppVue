@@ -23,14 +23,16 @@
     </div>
     <div class="list">
       <div class="list-inner">
-      <h2>Todo:</h2>
+      <!-- <h2>Todo:</h2> -->
       <ul>
         <li 
         class="list-item" 
         :class="{completed: item.completed}"
-        v-for="item in items">
-          <span>{{ item.name }}</span>
-          <div class="list-item-toggle" @click="toggleComplete(item)"></div>
+        v-for="item in reversedItems">
+          <span class="list-span">{{ item.name }}</span>
+          <input type="checkbox" class="list-item-toggle" @click="toggleComplete(item)">
+          
+        </input>
           <div class="list-item-delete" @click="removeItem(item.id)">
             <button class="delete-item">
               x

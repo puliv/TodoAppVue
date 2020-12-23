@@ -41,6 +41,10 @@ button {
 button:focus {
   outline: none;
 }
+button:hover {
+  background-color: rgb(219, 172, 110);
+  border: rgb(219, 172, 110);
+}
 .list {
   width: 100%;
   display: flex;
@@ -58,17 +62,49 @@ ul {
   width: 100%;
 }
 li {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
 }
-.list-item-toggle {
-  cursor: pointer;
+.list-span {
+  width: 80%;
 }
+.list-item-toggle {
+  width: 20px;
+  height: 20px;
+  margin: 0px 3px;
+  cursor: pointer;
+  background-color: burlywood;
+  border: 1px solid burlywood;
+  border-radius: 100px;
+  -webkit-appearance: none;
+}
+.list-item-toggle.completed,
+.list-item-toggle:checked,
+.list-item-toggle:active {
+  background-color: burlywood;
+  border: burlywood;
+  color: black !important;
+}
+.list-item-toggle:checked:after {
+  content: "\2713";
+  display: block;
+  padding: 2px 5px;
+}
+.list-item-toggle:hover {
+  background-color: rgb(219, 172, 110);
+  border: rgb(219, 172, 110);
+}
+
 .list-item-delete {
   cursor: pointer;
+  width: 5%;
 }
 .delete-item {
   width: 20px;
   height: 20px;
+  padding-left: 7px;
+  padding-bottom: 2px;
+  font: 500 14px Arial;
 }
