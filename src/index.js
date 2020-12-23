@@ -5,11 +5,13 @@ const app = new Vue({
     items: [
       {
         id: 1,
-        name: 'Lavar loza'
+        name: 'Lavar loza',
+        completed: true
       },
       {
         id: 2,
-        name: 'Barrer'
+        name: 'Barrer',
+        completed: false
       }
     ]
   },
@@ -21,6 +23,12 @@ const app = new Vue({
         completed: false,
       });
       this.newItem = '';
+    },
+    toggleComplete: function (item) {
+      item.completed = !item.completed;
+    },
+    removeItem: function (itemId) {
+      this.items = this.items.filter((newItem) => newItem.id !== itemId);
     }
   }
 });

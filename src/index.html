@@ -21,9 +21,13 @@
       <div class="card-inner">
       <h2>Todo:</h2>
       <ul class="list">
-        <li class="list-item" v-for="item in items">
-          <div class="list-item-toggle"></div><span>{{item.name}}</span>
-          <div class="list-item-delete">X</div>
+        <li 
+        class="list-item" 
+        :class="{completed: item.completed}"
+        v-for="item in items">
+          <div class="list-item-toggle" @click="toggleComplete(item)"></div>
+          <span>{{item.name}}</span>
+          <div class="list-item-delete" @click="removeItem(item.id)">X</div>
         </li>
       </ul>
     </div>
