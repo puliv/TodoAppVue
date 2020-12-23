@@ -10,24 +10,32 @@
 <body>
   <div id="app">
     <main class="container">
-      <h1>My todo list:</h1>
-      <div class="card">
-        <input v-model="newItem" placeholder="Add new todo">
-      <button @click="addItem" :disabled="newItem.length === 0">Add</button>
-      </input>
-      
+      <div class="top">
+        <h1>My todo list:</h1>
+        <h2>{{ currentDate }}</h2>
+      </div>
+      <div class="add-item">
+        <input v-model="newItem" placeholder="Add new todo" @keyup.enter="addItem">
+          <button @click="addItem" :disabled="newItem.length === 0">
+            +
+          </button>
+        </input>
     </div>
-    <div class="card">
-      <div class="card-inner">
+    <div class="list">
+      <div class="list-inner">
       <h2>Todo:</h2>
-      <ul class="list">
+      <ul>
         <li 
         class="list-item" 
         :class="{completed: item.completed}"
         v-for="item in items">
+          <span>{{ item.name }}</span>
           <div class="list-item-toggle" @click="toggleComplete(item)"></div>
-          <span>{{item.name}}</span>
-          <div class="list-item-delete" @click="removeItem(item.id)">X</div>
+          <div class="list-item-delete" @click="removeItem(item.id)">
+            <button class="delete-item">
+              x
+            </button>
+          </div>
         </li>
       </ul>
     </div>

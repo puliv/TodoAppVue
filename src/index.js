@@ -1,6 +1,7 @@
 const app = new Vue({
   el: "#app",
   data: {
+    currentDate: '',
     newItem: '',
     items: [
       {
@@ -29,6 +30,20 @@ const app = new Vue({
     },
     removeItem: function (itemId) {
       this.items = this.items.filter((newItem) => newItem.id !== itemId);
+    },
+    getDate: function () {
+      var options = { year: 'numeric', month: 'short', day: 'numeric' };
+      var date = new Date()
+        .toLocaleDateString('es', options)
+        .replace(/ /g, ' ')
+        .replace('.', '')
+        .replace(/-([a-z])/, function (x) { return ' ' + x[1].toUpperCase() });
+
+      this.currentDate = date;
     }
+  },
+  mounted() {
+    this.getDate();
   }
+
 });

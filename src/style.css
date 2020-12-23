@@ -2,9 +2,73 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: antiquewhite;
+  background-color: antiquewhite;
+  color: black;
 }
 .container {
   margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+}
+.add-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+input {
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: antiquewhite;
+}
+input:focus {
+  outline: none;
+}
+button {
+  border-radius: 100px;
+  cursor: pointer;
+  border: burlywood;
+  background-color: burlywood;
+  width: 30px;
+  height: 30px;
+}
+button:focus {
+  outline: none;
+}
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.list-inner {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.list-item-toggle {
+  cursor: pointer;
+}
+.list-item-delete {
+  cursor: pointer;
+}
+.delete-item {
+  width: 20px;
+  height: 20px;
 }
