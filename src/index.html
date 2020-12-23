@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO-APP</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <main class="container">
+      <h1>My todo list:</h1>
+      <div class="card">
+        <input v-model="newItem" placeholder="Add new todo">
+      <button @click="addItem" :disabled="newItem.length === 0">Add</button>
+      </input>
+      
+    </div>
+    <div class="card">
+      <div class="card-inner">
+      <h2>Todo:</h2>
+      <ul class="list">
+        <li class="list-item" v-for="item in items">
+          <div class="list-item-toggle"></div><span>{{item.name}}</span>
+          <div class="list-item-delete">X</div>
+        </li>
+      </ul>
+    </div>
+    </div>
+    </main>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
