@@ -1,20 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Suez+One&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: antiquewhite;
   color: black;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(174, 183, 224, 1) 71%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .container {
-  margin: 50px;
+  width: 90%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 30px;
+  background-color: cornsilk;
 }
 .top {
-  width: 450px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.top-title {
+  width: 50%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.top-date {
+  width: 50%;
+  display: flex;
+  padding-left: 120px;
+  padding-right: 20px;
+  justify-content: center;
+}
+.title {
+  font-family: "Suez One", serif;
 }
 .add-item {
   width: 100%;
@@ -25,7 +57,8 @@ input {
   width: 300px;
   border: none;
   border-bottom: 1px solid black;
-  background-color: antiquewhite;
+  background-color: cornsilk;
+  font-family: "Raleway", sans-serif;
 }
 input:focus {
   outline: none;
@@ -33,8 +66,8 @@ input:focus {
 button {
   border-radius: 100px;
   cursor: pointer;
-  border: burlywood;
-  background-color: burlywood;
+  border: #aeb7e0;
+  background-color: #aeb7e0;
   width: 30px;
   height: 30px;
 }
@@ -42,8 +75,8 @@ button:focus {
   outline: none;
 }
 button:hover {
-  background-color: rgb(219, 172, 110);
-  border: rgb(219, 172, 110);
+  background-color: #8b93b4;
+  border: #8b93b4;
 }
 .list {
   width: 100%;
@@ -51,7 +84,7 @@ button:hover {
   justify-content: center;
 }
 .list-inner {
-  width: 350px;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -69,22 +102,24 @@ li {
 }
 .list-span {
   width: 80%;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }
 .list-item-toggle {
   width: 20px;
   height: 20px;
   margin: 0px 3px;
   cursor: pointer;
-  background-color: burlywood;
-  border: 1px solid burlywood;
+  background-color: #aeb7e0;
+  border: 1px solid #aeb7e0;
   border-radius: 100px;
   -webkit-appearance: none;
 }
 .list-item-toggle.completed,
 .list-item-toggle:checked,
 .list-item-toggle:active {
-  background-color: burlywood;
-  border: burlywood;
+  background-color: #aeb7e0;
+  border: #8b93b4;
   color: black !important;
 }
 .list-item-toggle:checked:after {
@@ -93,10 +128,9 @@ li {
   padding: 2px 5px;
 }
 .list-item-toggle:hover {
-  background-color: rgb(219, 172, 110);
-  border: rgb(219, 172, 110);
+  background-color: #8b93b4;
+  border: #8b93b4;
 }
-
 .list-item-delete {
   cursor: pointer;
   width: 5%;
@@ -107,4 +141,18 @@ li {
   padding-left: 7px;
   padding-bottom: 2px;
   font: 500 14px Arial;
+}
+
+@media only screen and (max-width: 500px) {
+  .top-date {
+    text-align: end;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .add-item {
+    width: 90%;
+  }
+  .list-inner {
+    width: 80%;
+  }
 }

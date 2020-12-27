@@ -6,12 +6,12 @@ const app = new Vue({
     items: [
       {
         id: 1,
-        name: 'Lavar loza',
+        name: 'Estudiar',
         completed: true
       },
       {
         id: 2,
-        name: 'Barrer',
+        name: 'Entrenar',
         completed: false
       }
     ]

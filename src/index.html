@@ -11,8 +11,12 @@
   <div id="app">
     <main class="container">
       <div class="top">
-        <h1>My todo list:</h1>
-        <h2>{{ currentDate }}</h2>
+        <div class="top-title">
+        <h1 class="title">My todo list:</h1>
+        </div>
+        <div class="top-date">
+        <h2 class="title">{{ currentDate }}</h2>
+        </div>
       </div>
       <div class="add-item">
         <input v-model="newItem" placeholder="Add new todo" @keyup.enter="addItem">
